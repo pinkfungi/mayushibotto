@@ -14,10 +14,19 @@ fs.readdir("./events/", (err, files) => {
     client.on(eventName, (...args) => eventFunction.run(client, ...args));
   });
 });
+client.on("ready", async () => {
+  console.log(`bot is ready! ${client.user.username}`);
+   client.user.setStatus('available');
+   client.user.setPresence({
+     game: {
+         name: 'weebs $help',
+         type: "playing"
+     }
+ });///
+});
 
 client.on("message", message => {
  client.on('ready', () => {
-  console.log("your mom gay");
     });
   if (message.author.bot) return;
   if(message.content.indexOf(config.prefix) !== 0) return;
