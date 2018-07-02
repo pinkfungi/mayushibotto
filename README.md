@@ -1,0 +1,2 @@
+# mayushibotto
+for discord bot
